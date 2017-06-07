@@ -15,9 +15,9 @@ def read_records(data):
 
         #Replace single quotes with complicated escape
         outstr = outstr.replace("'","'\\''")
-        print(str(rid))
 
-        os.system("echo '" + outstr +"' | dataset create "+str(record['id'])+'.json')
+        os.system("dataset create "+str(record['id'])+'.json'+" '"+outstr+"'")
+        print(str(rid))
 
 if __name__ == "__main__":
 
